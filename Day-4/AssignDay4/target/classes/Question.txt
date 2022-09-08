@@ -1,0 +1,7 @@
+Q1/- What are the limitations of EntityManager methods to perform CRUD operations with
+DB?
+Ans. 
+1. Cannot search on data which is non-key column/attribute of a table.
+2. Cannot fetch multiple rows of a table to-print.
+3. Bulk update and deletion of data based on some conditions not possible.
+4. To overcome this problem JPA has provided JPQL (Java Persistence Query Language).
