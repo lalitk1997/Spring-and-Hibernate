@@ -1,0 +1,36 @@
+Q2. When should one use Maven?
+Ans. 
+1. Maven is used because it provide provides us the folder structures for different type of projects.
+2. Maven also manages JAR files, external library and frameworks. Via POM.xml file.
+3. Maven also manages builds of Projects including testing and developmental code.
+4. Maven helps to reduce down the developer effort for better time utilization.
+
+Q3. Explain the core concepts of Maven.
+Ans. 
+1. Core concepts of Maven are :- POM.xml, Build Life Cycle, Dependencies, managing plug-ins, repository management etc.
+
+Q4. What elements are used for creating a pom.xml file?
+Ans.
+1. POM is an XML file.
+2. User can include dependencies which are required by the project for execution.
+3. Some examples of dependencies or framework are :- Hibernate, SpringBoot, SQLConnector etc.
+4. All these are included with-in dependency tag, which are further included in dependencies tag.
+5. Also, users can update default Java Version via properties tag in POM.xml. 
+
+Q5. What are the different phases of the default life cycle?
+Ans.
+1. validate : check if all information necessary for the built is available.
+2. compile : compilation of the source code.
+3. test-compile : compile the test-source code.
+4. test : run unit tests.
+5. package : package compiled source code into the format (jar, war, …)
+6. integration-test: process and deploy the package if needed to run integration tests
+7. install: install the package to a local repository
+8. deploy: copy the package to the remote repository
+
+Q6.What are the different types of Maven repositories? Discuss.
+Ans.
+1. There are 3 possible Maven repositories : Local Repo, Org Repo and Web Repo (Apache Servers).
+2. Dependencies needed are downloaded from Apache servers where all files are hosted for all users.
+3. Downloaded dependencies are then store in local repo, for future use if needed.
+4. Org repo is hosted by organisation themselves, for their own developers usage.
