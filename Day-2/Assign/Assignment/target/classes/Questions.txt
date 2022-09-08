@@ -1,0 +1,68 @@
+Q1-> Explain Layared Architecture in Business application.
+Ans. 
+1. There are generally 3 layers in Business application :- -> Presentation Layer, -> Service/Business Logic Layer, 
+-> Data Link Layer
+2. Presentation Layer : It includes the elements that interact with users, Users can provide their input and can show 
+output (based on the business logic layer) e.g. Framework used for this layer is Spring MVC.
+3. Service/Business Logic Layer : This layer contains decision making business logic. e.g Spring Boot framework is used for
+this layer. EJB(core-technology).
+4. Data Link Layer : This layer deals with retreving and updating of data to-and-fro from the database. e.g Hibernate is used
+for this layer implementation. JDBC(core-technology).
+ 
+
+Q2.limitation of JDBC based persistence logic over JPA.
+Ans.
+1. JDBC is core-technology while Hibernate framework make use of JPA to perform the required task.
+2. JDBC is not Database Query independent. Like, there will be minor changes in implementation of Oracle Db and MySQL Db 
+Queries via JDBC.
+3. JPA stands for Java Persistance API, which makes relation between object and row of a table. Any changes in the persistent
+object will reflect in the database row.
+4. JDBC have a lot of boiler-plate code.
+5. JPA have 2-3 line of boiler-plate code and is also very easy to use. 
+6. While JDBC implementation query are written by developers which may or may not be efficient.
+7. Hibernate make use of JPA, ORM and JPQL to generate optimized query for better performance. 
+
+Q3. Differentiate between Hibernate and JPA
+Ans.
+1. JPA stands for Java Persistent API, which is a standard API for ORM softwares like Hibernate provided by Oracle corp.
+2. Hibernate internally implements JPA as standard package but also provide it's own classes and methods for implementation.
+3. JPA is implemented by all ORM tools like Hibernate, Toplink etc.
+4. JPA manage objects in form of 3 states : -> Transient/New state -> Persistent state -> Detach state
+
+Q4 Explain the properties of JPA(Java Persistence API).
+Ans. 
+	<persistence-unit name="employeeUnit" >
+		<properties>
+			<property name="javax.persistence.jdbc.driver" value="com.mysql.cj.jdbc.Driver" />
+			<property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/db1" />
+			<property name="javax.persistence.jdbc.user" value="root" />
+			<property name="javax.persistence.jdbc.password" value="root" />
+		</properties>
+	</persistence-unit>
+	
+	FILE : persistence.xml
+1. Driver -> include the connector based on the project.
+2. URL -> connection url.
+3. User -> provide database username.
+4. Password -> provide database password.
+
+Q5. Why to use ORM and What are the benefits of ORM?
+Ans.
+1. ORM means Object Realtion mapping.
+2. Classes of Java are mapped to Tables of the database.
+3. And, Objects of Classes in Java is mapped to rows of the table.
+4. It enable to develop Data Access layer independent of the Query Language and Database.
+5. Multiple frameworks are using this approach like Hibernate, Toplink etc.
+
+Q6 what is Core Components of Hibernate explain.
+Ans.
+1. Configuration Object – It has the configuration properties of the Hibernate. It is created first when creating the hibernate application. It has two components, Database connection, and class mapping setup. 
+The Database connection provides the configuration for the connection. 
+The class mapping creates the connection between the java class and the database.
+2. SessionFactory Object – It is used to configure the Hibernate application. 
+It is instantiated by the Configuration Object for every database using a separate configuration file.
+3. Session Object – It is used to create a physical connection with the database. 
+It is instantiated every time by the SessionFactory object to interact with the database.
+4. Transaction Object – It is used to handle the transaction works in the Hibernate framework.
+5. Query Object – It is used to create objects or to retrieve data from the database using HQL or SQL.
+6. Criteria Object – It is used to retrieve objects by executing the object-oriented criteria queries.
