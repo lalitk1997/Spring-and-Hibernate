@@ -171,8 +171,16 @@ public class JPAUseCases {
 //		for(Account acc:list) {
 //			System.out.println(acc);
 //		}
-//		
+
+		System.out.println("------------------");
 		
+//		Account account = new Account();
+//		account.setBalance(20000);
+//		account.setName("Tilak");
+//		EntityManager entityManager = EMUtil.provideEntityManager();
+//		entityManager.getTransaction().begin();
+//		entityManager.persist(account);
+//		entityManager.getTransaction().commit();
 		
 		em.close();
 	}
