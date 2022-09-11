@@ -1,5 +1,10 @@
 show databases;
 drop database db1;
 create database db1;
+create database testing;
 use db1;
+use testing;
 select * from account;
+show tables;
+select * from employee;
+delete from employee where empid = 3;
