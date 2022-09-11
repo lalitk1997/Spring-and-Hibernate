@@ -1,7 +1,10 @@
 package com.day6.model;
 
-import javax.persistence.EntityManager;
+import java.util.List;
+import java.util.Set;
 
+import javax.persistence.*;
+import javax.persistence.EntityManager;
 import com.day6.utility.EMUtil;
 
 public class Demo {
@@ -24,20 +27,32 @@ public class Demo {
 //		emp.setEname("Ram");
 //		emp.setSalary(7800);
 		
-		Employee emp= new Employee();
-		emp.setEname("Ramesh");
-		emp.setSalary(6800);
-		emp.getAddresses().add(new Address("Mh", "Pune", "787887","home"));
-		emp.getAddresses().add(new Address("MP", "Indore", "584542","office"));
+		
+//		Employee emp= new Employee();
+//		emp.setEname("Ramesh");
+//		emp.setSalary(6800);
+//		emp.getAddresses().add(new Address("Mh", "Pune", "787887","home"));
+//		emp.getAddresses().add(new Address("MP", "Indore", "584542","office"));
+//		em.getTransaction().begin();
+//		em.persist(emp);
+//		em.getTransaction().commit();
+//		System.out.println("done...");
+		
+
+//		EntityManager entityManager = EMUtil.provideEntityManager();
+//		String query = "from Employee where ename = 'Ramesh'";
+//		Query q = entityManager.createQuery(query);
+//		List<Employee> emps = q.getResultList();
+//		for(Employee emp:emps) {
+//			Set<Address> addrs= emp.getAddresses();
+//			for(Address adr:addrs) {
+//				System.out.println(adr);
+//			}
+//		}
 		
 		
-		em.getTransaction().begin();
 		
-		em.persist(emp);
 		
-		em.getTransaction().commit();
-		
-		System.out.println("done...");
 		em.close();
 	}
 }
