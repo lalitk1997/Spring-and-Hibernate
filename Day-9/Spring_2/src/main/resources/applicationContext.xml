@@ -14,7 +14,7 @@
     <!--
     	<property name="numberOfPerson" value="5"></property>  
     	<property name="v" ref="c"></property>
-      --> 
+    --> 
     	<constructor-arg name="v" ref="c"></constructor-arg>
     	<constructor-arg name="numberOfPerson" value="10"></constructor-arg>
     </bean>
