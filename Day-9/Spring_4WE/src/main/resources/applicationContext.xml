@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+	https://www.springframework.org/schema/beans/spring-beans.xsd"> 
+
+<!-- 
+	<bean id="bike" class="com.masai.setterInjection.Bike" /> 
+	<bean id="car" class="com.masai.setterInjection.Car" /> 
+	<bean id="travel" class="com.masai.setterInjection.Travel">
+ 
+		Injecting Dependency Object
+		Setting Value
+		
+		<property name="v" ref="bike"></property> 
+		<property name="numberOfPerson" value="4"></property>
+		
+	</bean>
+-->
+
+<bean id="car" class="com.masai.constructorInjection.Car"></bean>
+
+<bean id="bike" class="com.masai.constructorInjection.Bike"></bean>
+
+<bean id="travel" class="com.masai.constructorInjection.Travel">
+	
+	<constructor-arg ref="car"></constructor-arg>
+	<constructor-arg value="4"></constructor-arg>
+
+</bean>
+
+<bean id="classA" class = "com.masai.circularInjection.A"> 
+	
+	<constructor-arg ref="classB"></constructor-arg>
+	
+</bean>
+	
+
+<bean id="classB" class = "com.masai.circularInjection.B">
+
+	<constructor-arg ref="classA"></constructor-arg>
+
+</bean>
+
+
+
+</beans>
