@@ -18,30 +18,30 @@
 	</bean>
 -->
 
+<!-- 
 <bean id="car" class="com.masai.constructorInjection.Car"></bean>
-
 <bean id="bike" class="com.masai.constructorInjection.Bike"></bean>
-
 <bean id="travel" class="com.masai.constructorInjection.Travel">
-	
 	<constructor-arg ref="car"></constructor-arg>
 	<constructor-arg value="4"></constructor-arg>
-
 </bean>
+ -->
 
+<!-- 
 <bean id="classA" class = "com.masai.circularInjection.A"> 
-	
 	<constructor-arg ref="classB"></constructor-arg>
-	
 </bean>
-	
-
 <bean id="classB" class = "com.masai.circularInjection.B">
-
 	<constructor-arg ref="classA"></constructor-arg>
-
 </bean>
+ -->
 
-
+<bean id="dao" class="com.masai.dummylayer.DAOBean"></bean>
+<bean id="ser" class="com.masai.dummylayer.ServiceBean">
+	<constructor-arg ref="dao"></constructor-arg>
+</bean>
+<bean id="pre" class="com.masai.dummylayer.PresentationBean">
+	<constructor-arg ref="ser"></constructor-arg>
+</bean>
 
 </beans>
