@@ -1,1 +1,1 @@
-# Spring-and-Hibernate-udemy
+# Spring-and-Hibernate
