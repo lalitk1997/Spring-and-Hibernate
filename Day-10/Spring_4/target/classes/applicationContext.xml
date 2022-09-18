@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+	https://www.springframework.org/schema/beans/spring-beans.xsd"> 
+
+<!-- 
+	<bean id="db" class="masai.com.dummyApp.DAOBean" /> 
+	<bean id="sb" class="masai.com.dummyApp.ServiceBean" > 
+		<property name="dao" ref="db"/> 
+	</bean> 
+	<bean id="pb" class="masai.com.dummyApp.PresentationBean" > 
+		<property name="service" ref="sb"/> 
+	</bean>
+
+
+By Name
+	<bean id="dao" class="masai.com.dummyApp.DAOBean"></bean>
+	<bean id="service" class="masai.com.dummyApp.ServiceBean" autowire="byName"></bean>
+	<bean id="pb" class="masai.com.dummyApp.PresentationBean" autowire="byName"></bean>
+
+By Type
+
+
+	<bean id="db" class="masai.com.dummyApp.DAOBean"></bean>
+	<bean id="sb" class="masai.com.dummyApp.ServiceBean" autowire="byType"></bean>
+	<bean id="pb" class="masai.com.dummyApp.PresentationBean" autowire="byType"></bean>
+
+Constructor
+- It will try to resolve it byName first.
+- Then it will try to resolve it byType.
+
+<bean id="demo" class="com.masai.autowire.Demo" autowire="constructor"></bean>
+<bean id="a1" class="com.masai.autowire.A"></bean>
+<bean id="a2" class="com.masai.autowire.A"></bean>
+<bean id="b1" class="com.masai.autowire.B"></bean>
+
+-->
+<!--
+List<String> 
+<bean id="alist" class="com.masai.List.A">
+
+	<property name="name">
+		<list>
+			<value>Lalit</value>
+			<value>Rupesh</value>
+			<value>Vaishali</value>
+			<value>Yogesh</value>
+			<value>Brajkishor</value>
+		</list>
+	</property>
+
+</bean>
+
+
+<bean id="std1" class="com.masai.ObjectList.Student">
+	<constructor-arg name="rollNo" value="1"></constructor-arg>
+	<constructor-arg name="name" value="Lalit"></constructor-arg>
+	<constructor-arg name="marks" value="70"></constructor-arg>
+</bean>
+<bean id="std2" class="com.masai.ObjectList.Student">
+	<constructor-arg name="rollNo" value="2"></constructor-arg>
+	<constructor-arg name="name" value="Raja"></constructor-arg>
+	<constructor-arg name="marks" value="60"></constructor-arg>
+</bean>
+<bean id="std3" class="com.masai.ObjectList.Student">
+	<constructor-arg name="rollNo" value="3"></constructor-arg>
+	<constructor-arg name="name" value="Tilak"></constructor-arg>
+	<constructor-arg name="marks" value="90"></constructor-arg>
+</bean>
+
+<bean id="college" class="com.masai.ObjectList.College">
+	<constructor-arg name="collegeName" value="NIT"></constructor-arg>
+	<property name="students">
+		<list>
+			<ref bean="std1"/>
+			<ref bean="std2"/>
+			<ref bean="std3"/>
+		</list>
+	</property>
+</bean>
+
+For simple arrays
+
+<bean id="aid" class="com.masai.array.A">
+	<property name="names">
+		<set>
+			<value>Delhi</value>
+			<value>Haryana</value>
+			<value>Gujrat</value>
+			<value>Bihar</value>
+			<value>Delhi12</value>
+			<value>Haryana212</value>
+			<value>Gujrat21</value>
+			<value>Bihar21</value>
+		</set>
+	</property>
+</bean> 
+ 
+
+
+<bean id="s1" class="com.masai.map.Student">
+	<constructor-arg name="roll" value="100"></constructor-arg>
+	<constructor-arg name="name" value="Raj"></constructor-arg>
+	<constructor-arg name="marks" value="700"></constructor-arg>
+</bean>
+
+<bean id="s2" class="com.masai.map.Student">
+	<constructor-arg name="roll" value="101"></constructor-arg>
+	<constructor-arg name="name" value="Ram"></constructor-arg>
+	<constructor-arg name="marks" value="600"></constructor-arg>
+</bean>
+
+<bean id="s3" class="com.masai.map.Student">
+	<constructor-arg name="roll" value="102"></constructor-arg>
+	<constructor-arg name="name" value="Raaja"></constructor-arg>
+	<constructor-arg name="marks" value="500"></constructor-arg>
+</bean>
+
+<bean id="aid" class="com.masai.map.A">
+	<property name="keyVal">
+		<map>
+			<entry key-ref="s1" value="NIT"/>
+			<entry key-ref="s2" value="GIET"/>
+			<entry key-ref="s3" value="AMITY"/>
+		</map>
+	</property>
+</bean>
+
+Initializing
+<bean id="classa" class="com.masai.initializing.A" init-method="mySetup">
+	<property name="message" value="Hello learning spring..."></property>
+</bean>
+
+Disposing a Bean
+-->
+<bean id="classA" class="com.masai.disposing.A" 
+		init-method="init" 
+		destroy-method="destroy">
+	<property name="message" value="Welcome to Spring..."></property>
+</bean>
+
+
+</beans>
