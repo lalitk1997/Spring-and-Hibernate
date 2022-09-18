@@ -132,12 +132,47 @@ Initializing
 	<property name="message" value="Hello learning spring..."></property>
 </bean>
 
+
 Disposing a Bean
--->
 <bean id="classA" class="com.masai.disposing.A" 
 		init-method="init" 
 		destroy-method="destroy">
 	<property name="message" value="Welcome to Spring..."></property>
+</bean>
+
+
+Lazy-loading
+
+
+<bean id="d" class="com.masai.lazyandeagerinit.D" 
+		init-method="initMessage"
+		destroy-method="destroyMessage"
+		lazy-init="true">
+		<constructor-arg name="msg" value="spring is difficult"></constructor-arg>
+</bean>
+
+Scope
+1. Singleton
+
+
+<bean id="beanclass" class="com.masai.beanscope.BeanClass"
+		scope="singleton" >
+	<property name="name" value="Lalit"></property>
+</bean>
+<bean id="beanclass2" class="com.masai.beanscope.BeanClass"
+		scope="singleton" >
+	<property name="name" value="Lalit"></property>
+</bean>
+2. Prototype
+-->
+
+<bean id="beanclass" class="com.masai.beanscope.BeanClass"
+		scope="prototype" >
+	<property name="name" value="Lalit"></property>
+</bean>
+<bean id="beanclass2" class="com.masai.beanscope.BeanClass"
+		scope="prototype" >
+	<property name="name" value="Lalit"></property>
 </bean>
 
 
