@@ -1,8 +1,11 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8"?> 
 <beans xmlns="http://www.springframework.org/schema/beans" 
+	xmlns:context="http://www.springframework.org/schema/context" 
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
 	xsi:schemaLocation="http://www.springframework.org/schema/beans 
-	https://www.springframework.org/schema/beans/spring-beans.xsd"> 
+	https://www.springframework.org/schema/beans/spring-beans.xsd 
+	http://www.springframework.org/schema/context 
+	https://www.springframework.org/schema/context/spring-context.xsd" > 
 
 <!-- 
 	<bean id="db" class="masai.com.dummyApp.DAOBean" /> 
@@ -164,7 +167,7 @@ Scope
 	<property name="name" value="Lalit"></property>
 </bean>
 2. Prototype
--->
+
 
 <bean id="beanclass" class="com.masai.beanscope.BeanClass"
 		scope="prototype" >
@@ -174,6 +177,24 @@ Scope
 		scope="prototype" >
 	<property name="name" value="Lalit"></property>
 </bean>
+
+Stereotype Annotation
+<context:component-scan base-package="com.masai.WE" />
+
+Autowired
+// At first injection is done based on type
+// But in case of two-similar type => ambuiguity
+<context:component-scan base-package="com.masai.autowired" />
+<bean id="b1" class="com.masai.autowired.B"></bean>
+
+@Scope("prototype")
+
+@PostConstruct
+@PreDestroy
+-->
+
+<context:component-scan base-package="com.masai.lifecycle" />
+
 
 
 </beans>
